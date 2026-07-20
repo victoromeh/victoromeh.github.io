@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Victor Omeh — Architectural Designer</title>
+<meta name="description" content="Architectural Designer producing permit-ready drawing sets for single family homes, ADUs, renovations, and commercial projects across the US.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- ============ NAV ============ -->
+<header class="nav" id="top">
+  <div class="nav-inner">
+    <a href="#top" class="nav-name">Victor Omeh</a>
+    <nav class="nav-links">
+      <a href="#about">About</a>
+      <a href="#services">Services</a>
+      <a href="#projects">Projects</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <button class="nav-toggle" id="navToggle" aria-label="Open menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<!-- ============ HERO ============ -->
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-photo">
+      <img src="assets/images/hero.jpg" alt="Victor Omeh">
+    </div>
+    <div class="hero-text">
+      <p class="eyebrow">Architectural Designer</p>
+      <h1>Hi, I'm Victor Omeh</h1>
+      <p class="hero-lede">
+        I produce permit-ready drawing sets for single family homes, ADUs, renovations,
+        and commercial projects across the US — built in Revit, AutoCAD, and SketchUp,
+        and formatted the way building departments expect to see them.
+      </p>
+      <div class="hero-actions">
+        <a href="assets/cv/Victor_Omeh_Resume.pdf" class="btn btn-primary" download>Download CV</a>
+        <a href="#projects" class="btn btn-ghost">View Projects</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ ABOUT ============ -->
+<section class="section" id="about">
+  <div class="section-inner narrow">
+    <h2>About</h2>
+    <p>
+      I'm an architectural designer with a Bachelor of Architecture and hands-on experience
+      producing permit-ready drawing sets for residential and commercial projects. I work in
+      Revit, AutoCAD, and SketchUp, and I'm comfortable in both imperial and metric units, so
+      location is never a constraint.
+    </p>
+    <p>
+      My focus is on the technical production side of architecture — BIM modeling, construction
+      documents, drawing set coordination, and 3D visualization — built around what actually
+      gets a permit set approved.
+    </p>
+
+    <div class="tools">
+      <span>Revit</span>
+      <span>AutoCAD</span>
+      <span>SketchUp</span>
+      <span>Enscape</span>
+      <span>Photoshop</span>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SERVICES ============ -->
+<section class="section alt" id="services">
+  <div class="section-inner">
+    <h2>Services</h2>
+    <div class="services-grid">
+      <div class="service-card">
+        <h3>Permit-Ready Drawing Sets</h3>
+        <p>Complete construction document packages formatted for direct submission to a US building department.</p>
+      </div>
+      <div class="service-card">
+        <h3>BIM Modeling</h3>
+        <p>Revit models built from a concept sketch through to fully coordinated floor plans, sections, and elevations.</p>
+      </div>
+      <div class="service-card">
+        <h3>Construction Documents &amp; Detailing</h3>
+        <p>Wall sections, construction details, and schedules drawn in Revit and AutoCAD.</p>
+      </div>
+      <div class="service-card">
+        <h3>3D Visualization</h3>
+        <p>SketchUp views and presentation visuals to communicate design intent before a project goes to drawings.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PROJECTS ============ -->
+<section class="section" id="projects">
+  <div class="section-inner">
+    <h2>Projects</h2>
+    <p class="section-lede">A selection of permit-ready and concept drawing sets. Click any project to view sample sheets.</p>
+
+    <div class="project-grid" id="projectGrid"></div>
+  </div>
+</section>
+
+<!-- ============ CONTACT ============ -->
+<section class="section alt" id="contact">
+  <div class="section-inner narrow">
+    <h2>Contact</h2>
+    <p>
+      Have a project that needs to go from a rough sketch to a complete, submittable drawing set?
+      Send me the details and I'll take a look.
+    </p>
+
+    <div class="contact-grid">
+      <div class="contact-info">
+        <a href="mailto:omehvictor@gmail.com">omehvictor@gmail.com</a>
+        <a href="https://www.linkedin.com/in/victor-omeh" target="_blank" rel="noopener">LinkedIn ↗</a>
+      </div>
+
+      <!-- Replace YOUR_FORM_ID with your own Formspree endpoint -->
+      <form class="contact-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+        <label for="name">Name</label>
+        <input type="text" id="name" name="name" required>
+
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="message">Message</label>
+        <textarea id="message" name="message" rows="4" required></textarea>
+
+        <button type="submit" class="btn btn-primary">Send Message</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <p>© <span id="year"></span> Victor Omeh. Architectural Designer.</p>
+  <a href="#top">Back to top ↑</a>
+</footer>
+
+<!-- ============ PROJECT MODAL ============ -->
+<div class="modal" id="projectModal" aria-hidden="true">
+  <div class="modal-overlay" data-close></div>
+  <div class="modal-box" role="dialog" aria-modal="true">
+    <button class="modal-close" data-close aria-label="Close">×</button>
+
+    <div class="modal-slider">
+      <div class="slider-track" id="sliderTrack"></div>
+      <button class="slider-arrow slider-prev" id="sliderPrev" aria-label="Previous image">‹</button>
+      <button class="slider-arrow slider-next" id="sliderNext" aria-label="Next image">›</button>
+      <div class="slider-counter" id="sliderCounter"></div>
+    </div>
+
+    <div class="modal-body">
+      <p class="modal-tag" id="modalTag"></p>
+      <h3 id="modalTitle"></h3>
+      <p id="modalDescription"></p>
+      <ul id="modalList"></ul>
+      <a href="#" class="btn btn-primary" id="modalDownload" download>Download Complete Drawing Set (PDF)</a>
+    </div>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
